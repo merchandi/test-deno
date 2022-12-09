@@ -6,7 +6,7 @@ const app = new Application();
 const router = new Router();
 
 router.get("/", async (ctx: any) => {
-  ctx.response.body = "Hello deno XXX github";
+  ctx.response.body = "Hello deno XXX github XXX";
 });
 
 app.use(router.routes());
