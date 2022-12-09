@@ -1,0 +1,7 @@
+{
+  "tasks": {
+    "dev": "deno run -A --watch service.ts",
+    "start": "deno run -A service.ts",
+    "deploy": "deployctl deploy --project='test-deno-dmp' --token='ddp_oVNZCsQwNpKQpXO26D0HBJ6xPPjM6d0pFeSe' service.ts"
+  }
+}

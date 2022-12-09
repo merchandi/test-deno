@@ -1,9 +1,15 @@
-import express from "npm:express@4.18.2";
+import "https://deno.land/x/dotenv@v3.2.0/load.ts";
+import { serve } from "https://deno.land/std@0.155.0/http/server.ts";
+import { Application, Router } from "https://deno.land/x/oak@v11.1.0/mod.ts";
 
-const app = express();
+const app = new Application();
+const router = new Router();
 
-app.get("/", (req: any, res: any) => {
-  res.send("Welcome to the Dinosaur API!");
+router.get("/", async (ctx: any) => {
+  ctx.response.body = "Hello deno XXX github";
 });
 
-app.listen(3000);
+app.use(router.routes());
+app.use(router.allowedMethods());
+
+serve(async (req: Request) => await app.handle(req) as any);
